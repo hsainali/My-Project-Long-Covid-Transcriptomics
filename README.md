@@ -1,8 +1,6 @@
 # Transcriptomic Profiling of Long Covid (Post-Acute Sequelae of SARS-CoV-2, PASC). 
 
-This project is a computational analysis of blood RNA sequencing data that compares Long Covid (PASC) patients to Healthy Recovered ones.
-Long Covid is basically a persistent, multi systemic pathology where the immune system fails to return to homeostasis. This project maps the possible molecular mechanisms that underline the host's inability to clear viral reservoirs (by focusing specifically on immunity checkpoints dysregulation, kinase networks, and cytoskeletal paralysis) through high-throughput RNA sequencing data. 
-
+Df
 ## Dataset used 
 
 The dataset used in this project is adapted from the National Centre for Biotechnology Information, Gene Expression Omnibus (NCBI, GEO) accession number GSE267625 (Peripheral blood transcriptomes RNA sequencing for 111 patients (Healthy Recovered vs Long COVID). 
