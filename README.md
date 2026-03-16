@@ -1,10 +1,13 @@
-# Transcriptomic Profiling of Long Covid (Post-Acute Sequelae of SARS-CoV-2, PASC). 
-
-Df
+# Longitudinal Transcriptomic Mapping of Persistent Immune Dysregulation in Post-Acute Sequelae of SARS-CoV-2, PASC. 
 ## Dataset used 
 
-The dataset used in this project is adapted from the National Centre for Biotechnology Information, Gene Expression Omnibus (NCBI, GEO) accession number GSE267625 (Peripheral blood transcriptomes RNA sequencing for 111 patients (Healthy Recovered vs Long COVID). 
+The **dataset** used in this project is adapted from the National Centre for Biotechnology Information, Gene Expression Omnibus (NCBI, GEO) accession number GSE267625 (Peripheral blood transcriptomes RNA sequencing for 111 patients (Healthy Recovered vs Long COVID) https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267625 . 
 
+**Cohorts:** Healthy Recovered (AA) vs Long COVID (PASC) (VV).
+
+**Timepoints:** 3-6 months and 12-15 months post infection. (longitudinal, same individuals)
+## Background 
+Post-Acute Sequelae of SARS-CoV-2 (PASC), colloquially known as Long COVID, remains one of the most poorly understood and debilitating consequences of the COVID-19 pandemic, affecting approximately [10–20% of all COVID-19 survivors](https://www.medrxiv.org/content/10.1101/2024.01.14.24301293v1). PASC presents as a highly heterogeneous, multisystemic syndrome encompassing severe chronic fatigue, cognitive dysfunction, cardiovascular anomalies, and autonomic nervous system dysregulation. The precise transcriptomic mechanisms driving susceptibility and chronicity remain largely undefined,though prevailing hypotheses centre on [immune exhaustion](https://www.nature.com/articles/s41590-023-01724-6), [microvascular clotting cascades](https://www.cell.com/cell/fulltext/S0092-8674(24)00886-9), and [long-term viral persistence within distinct physiological reservoirs](https://www.science.org/doi/10.1126/scitranslmed.adk3295) (tissue sites where the virus evades immune clearance and continues replicating at low levels).
 ## Pipeline Overview 
 
 Step 1: I wrote python code to ingest the massive raw dataset (contains RNA levels of 34,000+ genes across 111 different human patients) 
