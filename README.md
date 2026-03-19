@@ -1,3 +1,45 @@
+# Acknowledgment and Reference : 
+As I am a beginner in coding and learning how ot build functions and understand statistical tools, this project was completed using multiple online resources that helps me understand the code and implement it in my project.
+(This project is done to develop my skills and interest in computational biology and may not follow the professional data analysis accuracy and production yet). 
+
+I reference: 
+
+**DESeq2 (Original):** [Love, M. I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology, 15, 550.](https://doi.org/10.1186/s13059-014-0550-8)
+ 
+**PyDESeq2:** [Muzellec, B., Teleńczuk, M., Cabeli, V., & Andreux, M. (2023). PyDESeq2: a python package for bulk RNA-seq differential expression analysis. Bioinformatics, 39(9), btad547.](https://doi.org/10.1093/bioinformatics/btad547)
+
+## **For data formatting:**
+**Mike Saint-Antoine:** [Intro to Bioinformatics 7: Downloading Data from the Gene Expression Omnibus (GEO).](https://www.youtube.com/watch?v=4am5XF_597A) 
+[And Intro to Bioinformatics 4: Gene Expression Data Format.](https://www.youtube.com/watch?v=EcLF-L-HDf0)
+
+## **Normalization and Differences**
+**Harvard Chan Bioinformatics Core** [Sample-level QC.](https://hbctraining.github.io/Training-modules/planning_successful_rnaseq/lessons/sample_level_QC.html)
+
+**Lei Guo:** [Normalize RNA-seq Gene Expression: TPM, FPKM, CPM, Z-scores.](https://www.youtube.com/watch?v=zqB_qdRagH4)
+
+**StatQuest with Josh Starmer:** [StatQuest: PCA in Python.](https://www.youtube.com/watch?v=Lsue2gEM9D0) 
+
+## **Differential Expression Analysis**
+**Sanbomics:** [Differential expression in Python with pyDESeq2.](https://www.youtube.com/watch?v=wIvxFEMQVwg)
+
+**Bioinformatics Coach:** [DESeq2 Tutorial | How I analyze RNA Seq Gene Expression data using DESeq2.](https://www.youtube.com/watch?v=kOlMcZujHHA)
+
+**OMGenomics:** [RNA-seq tutorial with DESeq2: Differential gene expression project.](https://www.youtube.com/watch?v=NGbZmlGLG5w)
+
+**RunCell:** [Differential Expression Analysis.](https://www.runcell.dev/blog/differential-expression-analysis)
+
+## **Statistical Testing and methods:**
+**Vincent Stevenson:** [Calculate FDR Adjusted P-values in Python - Benjamini Hochberg Procedure.](https://www.youtube.com/watch?v=MHjblrdzRuU)
+
+**GeeksforGeeks:** [Welch's t-test in Python.](http://geeksforgeeks.org/machine-learning/welchs-t-test-in-python/)
+
+**DSC Data Science Concepts:** [Omitted Variable Bias. Wald Test in Python (Jupyter).](https://www.youtube.com/watch?v=nv27tbea-qI)
+
+**Andrew P. Wheeler:** [Wald Tests via Statsmodels (Python).](https://andrewpwheeler.com/2021/06/18/wald-tests-via-statsmodels-python/)
+
+## **Volcano plot**
+**BioInfo Tips:** [How to Make a Volcano Plot for RNA-Seq Data Analysis | Python.](https://www.youtube.com/watch?v=qHeIhEPKU98)
+
 # Longitudinal Transcriptomic Mapping of Persistent Immune Dysregulation in Post-Acute Sequelae of SARS-CoV-2, PASC. 
 # **Currently under review for using inaccurate statistical tool** - Husain.
 ## Dataset used 
