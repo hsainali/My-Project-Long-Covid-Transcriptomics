@@ -51,19 +51,18 @@ The **dataset** used in this project is adapted from the National Centre for Bio
 **Timepoints:** 3-6 months and 12-15 months post infection. (longitudinal, same individuals)
 ## Background 
 Post-Acute Sequelae of SARS-CoV-2 (PASC), colloquially known as Long COVID, remains one of the most poorly understood and debilitating consequences of the COVID-19 pandemic, affecting approximately [10–20% of all COVID-19 survivors](https://www.medrxiv.org/content/10.1101/2024.01.14.24301293v1). PASC presents as a highly heterogeneous, multisystemic syndrome encompassing severe chronic fatigue, cognitive dysfunction, cardiovascular anomalies, and autonomic nervous system dysregulation. The precise transcriptomic mechanisms driving susceptibility and chronicity remain largely undefined,though prevailing hypotheses centre on [immune exhaustion](https://www.nature.com/articles/s41590-023-01724-6), [microvascular clotting cascades](https://www.cell.com/cell/fulltext/S0092-8674(24)00886-9), and [long-term viral persistence within distinct physiological reservoirs](https://www.science.org/doi/10.1126/scitranslmed.adk3295) (tissue sites where the virus evades immune clearance and continues replicating at low levels).
+
 ## Pipeline Overview 
 
-Step 1: I wrote python code to ingest the massive raw dataset (contains RNA levels of 34,000+ genes across 111 different human patients) 
+Step 1, Data pre-processing:  I implemented python code to ingest the massive raw dataset (contains RNA levels of 34,000+ genes across 111 different human patients). Then filtered out the lowly-expressed genes and extracted for analysis the sample patients groups (Healthy Recovered vs Long COVID PASC) from the 111 patients' samples. 
 
-Step 2: I filtered out the noise (filtering low-expression biological noise) and separated the 111 patients into "Healthy Recovered" and "Long COVID" groups. 
+Step 2: Gene Annotation: Translated the database IDs into standard gene symbols using "MyGene" to allow for biological interpretation.
 
-Step 3: Ran an unsupervised machine learning technique (Principal Component Analysis, PCA) to aid visualization and be able to reduce the number of variables in the dataset while retaining as much information as possible. This way I can prove that long COVID patients have a distinct, overarching immune system signature that can be further investigated. 
+Step 3: Reducing Dimentionality: Executred PCA on the transformed count data to visualise cohort variance. 
 
-Step 4: I translated the unreadable data base using API (MyGene) into recognizable gene symbols (e.g FYN and PDCD1). 
+Step 4: Differencial Gene Expression Analysis: modeled the raw data using PyDESeq2 to identify signfiicantly dysregulated genes between the two groups. (Wald t-test) 
 
-Step 5: Executed advanced statistical testing (beyond p value) such as (Welch's t-test and FDR correction) to be able to isolate the top 100 most significantly dysregulated genes. 
-
-Step 6: Finally I was able to generate a Volcano Plot to map that data and visually highlight specific markers of T-cell exhaustion and inflammation. 
+Step 5: Volcano Plot: constructed to visualize the data distribution and highlight specific biological markers markers 
 
 ## Results and Findings
 
@@ -73,12 +72,9 @@ Overall, the PCA results showed 40.6% variance representing a strong signal that
 
 ## Statistical tools 
 
-1. Log2 CPM Normalization: This is important to overcome the bias of raw sequencing counts in library size data. Total number of reads the machine generates for a sample A that has 2 million reads will be upregulated compared to sample B that has 1 million reads simply because the machine ran longer. Counts Per Million (CPM) will help converting counts into relative proportions of the total library data. 
-I then applied log2 transformation because gene expression data is not straightforward as some genes have few reads and other genes can have millions. This can help normalize the distribution of the data and ensure a 2-fold change in a lowly expressed gene carries the same mathematical weight as a 2-fold change in a highly expressed gene. This makes the data more suitable for linear statistical testing. 
+1. Negative Binomial GLM & Wald Test (PyDESeq2) : This is used becasue RNA-seq count data is highly overdispersed and heterogeneous (especially in the PASC cohort). Standard linear tests (like a t-test) would be insufficient. 
 
-2. Welch's T-Test: I used this test because standard t-test by default assume Homoscedasticity (Healthy Recovered & Long Covid groups have equal variance). This was not the case. While Healthy group was biologically stable, the PASC group was extremely heterogenous and results in an unequal variance. Welch's t-test would address this issue and for example it did not potentially hide genes dysregulation like GRK3 or PDCD1. 
-
-3. FDR correction: Relying on standard p-value (0.05) solely would increase the false positive that leads to pathways that don't actually exist in identifying diagnostic biomarkers. Benjamini-Hochberg False Discovery Rate would force the correction of raw p-values based on their rank (Adjusted p-values). Thus, for 16,842 high-confidence genes where p-value by random chance would make 842 genes appear significant, FDR would narrow down the list to high-confidence signatures of immune exhaustion. For example, LINC01876 can be said to be true molecular footprint of long COVID rather than statistical artifact. 
+2. FDR correction: Relying on standard p-value (0.05) solely would increase the false positive that leads to pathways that don't actually exist in identifying diagnostic biomarkers. Benjamini-Hochberg False Discovery Rate would force the correction of raw p-values based on their rank (Adjusted p-values).
 
 
 
