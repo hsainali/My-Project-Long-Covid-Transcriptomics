@@ -1,5 +1,5 @@
 # Acknowledgment and Reference : 
-As I am a beginner in coding and learning how ot build functions and understand statistical tools, this project was completed using multiple online resources that helps me understand the code and implement it in my project.
+As I am a beginner in coding and learning how to build functions and understand statistical tools, this project was completed using multiple online resources that helps me understand the code and implement it in my project.
 (This project is done to develop my skills and interest in computational biology and may not follow the professional data analysis accuracy and production yet). 
 
 I reference: 
